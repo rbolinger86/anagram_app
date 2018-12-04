@@ -1,0 +1,16 @@
+<body class="results-page">
+  <h2>Anagrams For The Word</h2>
+  <p class="word-display"><%= "#{@word}" %></p>
+  <img id="arrow-image" src="" alt="Arrow">
+  <ul>
+    <% @anagrams.each do |anagram| %>
+      <li><%= "#{anagram}" %></li>
+    <% end %>
+  </ul>
+  <p id="more-anagrams">do you think there should be more anagrams here?</p>
+  <br>
+  <div class="extra-links">
+    <a href="/new.erb">Add them here</a>
+    <a href="/all.erb">View all words</a>
+  </div>
+</body>

@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'rspec'
+gem 'rack'
+gem 'sinatra'
+gem 'rake'
+gem 'pg'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'puma'

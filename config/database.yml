@@ -1,15 +1,18 @@
+production:
+  url: <% ENV['DATABASE_URL'] %>
+
 development:
   adapter: postgresql
   database: numerology_development
   pool: 5
   host: localhost
   username: postgres
-  password: 123456
-    
+  password: 0386
+
 test:
   adapter: postgresql
   database: numerology_test
   pool: 5
   host: localhost
   username: postgres
-  password: 123456
+  password: 0386

@@ -18,7 +18,7 @@ def three_letters?(input)
 end
 def distinct_letters?(input)
   letter_array = input.chars
-  unique_letters = letter_array.uniq
+  unique_letters = letter_array.to_a.uniq
   if unique_letters.length < letter_array.length
     false
   else

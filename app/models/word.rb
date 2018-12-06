@@ -29,4 +29,5 @@ class Word < ActiveRecord::Base
     characters = self.text.chars
     alphabetized_characters = characters.sort
     self.letters = alphabetized_characters.join
+  end
 end

@@ -2,9 +2,11 @@
   <h2>Anagrams For The Word</h2>
   <p class="word-display"><%= "#{@word}" %></p>
   <img id="arrow-image" src="" alt="Arrow">
-  <ul>
-    <% @anagrams.each do |anagram| %>
-      <li><%= "#{anagram}" %></li>
+  <ul class="anagrams">
+    <% if !@anagrams.nil? %>
+      <% @anagrams.each do |word| %>
+        <li><%= Word.pluck(:text) %></li>
+      <% end %>
     <% end %>
   </ul>
   <p id="more-anagrams">do you think there should be more anagrams here?</p>

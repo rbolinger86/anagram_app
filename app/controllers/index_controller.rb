@@ -9,6 +9,16 @@ get '/anagrams/:word' do
   erb :show
 end
 
+post '/' do
+  word = params[:word]
+  if valid_input?(word)
+    redirect "/anagrams/#{word}"
+  else
+    @error = "Sorry, your input was invalid. Please try again!"
+    erb :index
+  end
+end
+
 def three_letters?(input)
   if input.length < 4
     true
@@ -30,15 +40,5 @@ def valid_input?(input)
     true
   else
     false
-  end
-end
-
-post '/' do
-  word = params[:word]
-  if valid_input?(word)
-    redirect "/anagrams/#{word}"
-  else
-    @error = "Sorry, your input was invalid. Please try again!"
-    erb :index
   end
 end

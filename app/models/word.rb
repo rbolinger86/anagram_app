@@ -1,4 +1,5 @@
 class Word < ActiveRecord::Base
+  before_create :add_letters
   def self.find_anagrams(string)
     letters = string.split(//)
     anagrams = []
@@ -24,4 +25,8 @@ class Word < ActiveRecord::Base
     end
     reversed_letters
   end
+  def add_letters
+    characters = self.text.chars
+    alphabetized_characters = characters.sort
+    self.letters = alphabetized_characters.join
 end

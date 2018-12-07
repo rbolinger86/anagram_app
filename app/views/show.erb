@@ -5,7 +5,7 @@
   <ul class="anagrams">
     <% if !@anagrams.nil? %>
       <% @anagrams.each do |word| %>
-        <li><%= Word.pluck(:text) %></li>
+        <li><%= word.text %></li>
       <% end %>
     <% end %>
   </ul>

@@ -80,7 +80,7 @@ body.results-page {
   font-family:'montserrat', arial;
   background-size: 100vw 140vh, auto;
   background-attachment: fixed;
-  overflow: hidden;
+  overflow: auto;
 }
 #more-anagrams {
   text-transform: capitalize;
@@ -124,4 +124,7 @@ ul {
   padding: 5px;
   margin: 1em auto 5px auto;
   width: fit-content;
+}
+body.index-page {
+  overflow: auto;
 }

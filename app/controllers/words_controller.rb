@@ -8,6 +8,7 @@ get '/words/new' do
 end
 
 post '/words' do
+  puts params.inspect
   word = Word.create(text: params[:text])
   redirect "/words/#{word.id}"
 end

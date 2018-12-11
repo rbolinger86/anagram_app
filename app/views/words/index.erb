@@ -16,6 +16,12 @@
               Edit
             </a>
           </td>
+          <td class="table-item">
+            <form action="<%= "/words/#{word.id}" %>" method="post">
+              <input type="hidden" name="_method" value="delete" />
+              <input type="submit" value="Delete" />
+            </form>
+          </td>
         </tr>
       <% end %>
     </tbody>

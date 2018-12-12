@@ -5,13 +5,12 @@ class Word < ActiveRecord::Base
     anagrams = []
     letters.each do |letter|
       remaining = letters.select { |l| l != letter }
-      potential_anagram = letter + reverse_letters(remaining).join('')
       potential_anagrams = []
       potential_anagrams << letter + remaining.join('')
       potential_anagrams << letter + reverse_letters(remaining).join('')
       potential_anagrams.each do |potential_anagram|
-        if self.find_by_text(potential_anagram).present?
-          anagrams << potential_anagram
+        if self.find_by_text(potential_anagrams).present? && potential_anagram.text.to_s != string
+          anagrams << potential_anagrams
         end
       end
     end

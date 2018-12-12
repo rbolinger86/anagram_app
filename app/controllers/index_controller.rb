@@ -1,4 +1,3 @@
-
 get '/' do
   erb :index
 end
@@ -10,12 +9,30 @@ get '/anagrams/:word' do
   erb :show
 end
 
-def distinct_letters?(input)
+post '/' do
+  word = params[:word]
+  if valid_input?(word)
+    redirect "/anagrams/#{word}"
+  else
+    @error = "Sorry, your input was invalid. Please try again!"
+    erb :index
+  end
+end
+
+def all_letters?(input)
   letter_array = input.chars
-  unique_letters = letter_array.to_a.uniq
+  unique_letters = letter_array.to_s.gsub(/[^a-z]/i, '')
   if unique_letters.length < letter_array.length
     false
   else
     true
+  end
+end
+
+def valid_input?(input)
+  if all_letters?(input)
+    true
+  else
+    false
   end
 end

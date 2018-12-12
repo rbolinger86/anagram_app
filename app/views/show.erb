@@ -3,7 +3,7 @@
   <p class="word-display"><%= "#{@word}" %></p>
   <img id="arrow-image" src="" alt="Arrow">
   <ul class="anagrams">
-    <% if !@anagrams.nil? %>
+    <% if @anagrams.present? %>
       <% @anagrams.each do |word| %>
         <li><%= word.text %></li>
       <% end %>
